@@ -4,7 +4,7 @@ use App\Http\Controllers\MapController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', [MapController::class, 'index'])->name('map.index');
+Route::get('/', [MapController::class, 'index'])->name('home');
 
 Route::prefix('/api')->group( function(){
     Route::get('/coordinates', function() {
