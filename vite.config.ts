@@ -16,5 +16,5 @@ export default defineConfig({
             generate: false, // evita que rode artisan no build do Railway
         }),
     ],
-    base: process.env.ASSET_URL + '/build/',
+    base: import.meta.env.VITE_APP_URL + '/build/',
 });
