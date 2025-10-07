@@ -8,9 +8,11 @@ Route::get('/', [MapController::class, 'index'])->name('home');
 
 Route::prefix('/api')->group( function(){
     Route::get('/coordinates', function() {
-        return response()->json(
-            cache('last_coordinates', ['latitude' => null, 'longitude' => null])
-        );
+        $coordinates = [
+            'latitude' => rand( -33 * 1000000, 5 * 1000000) / 1000000,
+            'longitude' => rand( -73 * 1000000, -34 * 1000000) / 1000000,
+        ];
+        return json_encode($coordinates);
     })->name('map.coordinates');
 });
 
